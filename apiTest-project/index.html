@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" name="viewport" content="width=device-width">
+    <title>Chuck Norris Your Face</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+  </head>
+  <style media="screen">
+
+     /* .jumbotron {
+      background-image: url("https://i.ytimg.com/vi/bHWc-K9CtZQ/maxresdefault.jpg");
+       background-position: center;
+      background-size: cover;
+      backroung-color: transparent;
+    }
+    .mainJumbo {
+      background-color: gray;
+    }
+    section {
+      background-color: transparent !important;
+    }
+    section .img {
+      background-image: url("https://i.ytimg.com/vi/bHWc-K9CtZQ/maxresdefault.jpg");
+      background-image: center;
+      background-size: cover;
+      opacity: 0.45;
+
+    }
+    section .container {
+      background-color: transparent;
+    } */
+
+    h1 {
+      font-family: 'Press Start 2P', cursive;
+    }
+    p {
+      font-family: 'Press Start 2P', cursive;
+    }
+    section {
+    position: relative;
+    background-color: transparent !important;
+}
+
+section .img {
+    position: absolute;
+    left:0; top:0;
+    background-size: cover;
+    max-height: 560px;
+    width: 100%;
+    opacity: 0.20;
+    background-image: url("https://i.ytimg.com/vi/bHWc-K9CtZQ/maxresdefault.jpg");
+    z-index: -1;
+  height: 100%;
+}
+
+section .container {
+    background-color: transparent;
+  height: 50vh;
+}
+
+/* section .container .row {
+    padding: 1.5em;
+} */
+.jumbotron {
+     background-color: black;height:height: 100vh;}
+
+#footer {
+    font-size: 10px;
+    text-align: center;
+}
+  </style>
+  <body>
+    <div class="container">
+
+    <section class="jumbotron">
+      <div class="img"></div>
+
+
+      <div class="container">
+        <h1 class="display-4">Face Punch Dynamite!</h1>
+        <p class="lead">What could possibly make your day better?</p>
+        <hr class="my-4">
+        <p>A freaking random joke about the most devasting, throat punchy, bazooka ninja Chuck Norris. That's what!!</p>
+        <br>
+        <br>
+        <br>
+        <button type="button" id="rocketButton" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter">
+          KICK YOUR MOM!
+        </button>
+      </div>
+    </section>
+  </div>
+  <a href="https://www.newbsanity.com"><p id="footer">Copywrite 1986 - GrenadeFlavoredWater Inc</p></a>
+
+    <!-- <section class="jumbotron">
+      <div class="img"></div>
+
+      <div class="container">
+        <div class="row">
+          <h1 class="display-3">Test</h1>
+          <p class="lead">Test</p>
+          <p class="lead">
+            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+          </p>
+        </div>
+      </div>
+    </section> -->
+
+
+    <!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Rocket Launcher Jock Strap!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h4 id="grenadeBox">What are you looking at?</h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Explode</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+  <script src="apiTest.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
