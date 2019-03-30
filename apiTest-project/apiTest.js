@@ -18,3 +18,7 @@ console.log(joke);
 document.querySelector('#rocketButton').addEventListener('click', function(e){
   getJoke()
 })
+
+document.querySelector('#ballsBasket').addEventListener('click', function(e){
+  getJoke()
+})
