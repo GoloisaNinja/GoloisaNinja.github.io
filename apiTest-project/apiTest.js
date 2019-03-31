@@ -10,14 +10,26 @@ const myArray = [
   'Chainsaw Porterhouse'
 ]
 
-document.querySelector('#loadingMain').style.visibility = "hidden"
-document.querySelector('#loadingSupp').style.visibility = "hidden"
+$(document).ready(function() {
+  $('.btn').on('click', function() {
+    var $this = $(this);
+    var loadingText = '<i class="spinner-border spinner-border-sm"></i> gutpunching...';
+    if ($(this).html() !== loadingText) {
+      $this.data('original-text', $(this).html());
+      $this.html(loadingText);
+    }
+    setTimeout(function() {
+      $this.html($this.data('original-text'));
+    }, 1500);
+  });
+})
+
+
 let joke = ''
 let randTitle = ''
 const getJoke = function(){
 randTitle = myArray[Math.floor(Math.random() * myArray.length)]
-document.querySelector('#loadingMain').style.visibility = "visible"
-document.querySelector('#loadingSupp').style.visibility = "visible"
+
 let request = new XMLHttpRequest()
 let url = "https://api.chucknorris.io/jokes/random"
 
@@ -29,8 +41,7 @@ let data = JSON.parse(response)
 
 let joke = data.value
 document.querySelector('#exampleModalCenterTitle').textContent = randTitle
-document.querySelector('#loadingMain').style.visibility = "hidden"
-document.querySelector('#loadingSupp').style.visibility = "hidden"
+
 document.querySelector('#grenadeBox').textContent = joke
 console.log(joke);
 console.log(randTitle);
@@ -43,3 +54,17 @@ document.querySelector('#rocketButton').addEventListener('click', function(e){
 document.querySelector('#ballsBasket').addEventListener('click', function(e){
   getJoke()
 })
+
+// $(document).ready(function() {
+//   $('.btn').on('click', function() {
+//     var $this = $(this);
+//     var loadingText = '<i class="spinner-border spinner-border-sm"></i> gutpunching...';
+//     if ($(this).html() !== loadingText) {
+//       $this.data('original-text', $(this).html());
+//       $this.html(loadingText);
+//     }
+//     setTimeout(function() {
+//       $this.html($this.data('original-text'));
+//     }, 2000);
+//   });
+// })
