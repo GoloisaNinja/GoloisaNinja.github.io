@@ -1,16 +1,30 @@
 $(document).ready(function() {
   $('.btn').on('click', function() {
     var $this = $(this);
-    var loadingText = '<i class="spinner-border spinner-border-sm disabled"></i>';
+    var loadingText = '<i class="spinner-border spinner-border-sm"></i> finding ninjas';
     if ($(this).html() !== loadingText) {
       $this.data('original-text', $(this).html());
       $this.html(loadingText);
+      setTimeout(function () {
+        $this.prop("disabled", true)
+      }, 15)
     }
     setTimeout(function() {
-      $this.html($this.data('original-text'));
-    }, 500);
+      $this.html($this.data('original-text')).prop("disabled", false);
+    }, 1000);
   });
 })
+
+// $(document).ready(function() {
+//     $("#btnFetch").click(function() {
+//       // disable button
+//       $(this).prop("disabled", true);
+//       // add spinner to button
+//       $(this).html(
+//         `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Loading...`
+//       );
+//     });
+// });
 
 const myArray = [
   'Rocket Launcher Jock Strap',
