@@ -1,3 +1,17 @@
+$(document).ready(function() {
+  $('.btn').on('click', function() {
+    var $this = $(this);
+    var loadingText = '<i class="spinner-border spinner-border-sm disabled"></i>';
+    if ($(this).html() !== loadingText) {
+      $this.data('original-text', $(this).html());
+      $this.html(loadingText);
+    }
+    setTimeout(function() {
+      $this.html($this.data('original-text'));
+    }, 500);
+  });
+})
+
 const myArray = [
   'Rocket Launcher Jock Strap',
   'Bicep Lightning Bullets',
@@ -9,21 +23,6 @@ const myArray = [
   'Shark With Chest Hair',
   'Chainsaw Porterhouse'
 ]
-
-$(document).ready(function() {
-  $('.btn').on('click', function() {
-    var $this = $(this);
-    var loadingText = '<i class="spinner-border spinner-border-sm"></i> gutpunching...';
-    if ($(this).html() !== loadingText) {
-      $this.data('original-text', $(this).html());
-      $this.html(loadingText);
-    }
-    setTimeout(function() {
-      $this.html($this.data('original-text'));
-    }, 1500);
-  });
-})
-
 
 let joke = ''
 let randTitle = ''
@@ -54,6 +53,7 @@ document.querySelector('#rocketButton').addEventListener('click', function(e){
 document.querySelector('#ballsBasket').addEventListener('click', function(e){
   getJoke()
 })
+
 
 // $(document).ready(function() {
 //   $('.btn').on('click', function() {
