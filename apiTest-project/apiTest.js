@@ -46,7 +46,7 @@ randTitle = myArray[Math.floor(Math.random() * myArray.length)]
 let request = new XMLHttpRequest()
 let url = "https://api.chucknorris.io/jokes/random"
 
-request.open("GET", url, false)
+request.open("GET", url, true)
 request.send()
 
 let response = request.response
