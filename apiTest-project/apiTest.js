@@ -1,7 +1,7 @@
 $(document).ready(function() {
   $('.btn').on('click', function() {
     var $this = $(this);
-    var loadingText = '<i class="spinner-border spinner-border-sm"></i> finding ninjas';
+    var loadingText = '<i class="spinner-border spinner-border-sm"></i> growing beard';
     if ($(this).html() !== loadingText) {
       $this.data('original-text', $(this).html());
       $this.html(loadingText);
@@ -46,7 +46,7 @@ randTitle = myArray[Math.floor(Math.random() * myArray.length)]
 let request = new XMLHttpRequest()
 let url = "https://api.chucknorris.io/jokes/random"
 
-request.open("GET", url, false)
+request.open("GET", url, true)
 request.send()
 
 let response = request.response
