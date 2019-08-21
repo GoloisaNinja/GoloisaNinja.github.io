@@ -41,16 +41,45 @@ const myArray = [
 let joke = ''
 let randTitle = ''
 let main = ''
+
 const getJoke = async function(){
-randTitle = myArray[Math.floor(Math.random() * myArray.length)]
+  randTitle = myArray[Math.floor(Math.random() * myArray.length)]
+  const response = await fetch('https://api.icndb.com/jokes/random')
+  let data = await response.json()
+  console.log(data);
+  let joke = data.value.joke
+}
 
-const response = await fetch('https://api.icndb.com/jokes/random')
-let data = await response.json()
-console.log(data);
-let joke = data.value.joke
+document.querySelector('#rocketButton').addEventListener('click', function(e){
+  getJoke()
+  document.querySelector('#exampleModalCenterTitle').textContent = randTitle
+  document.querySelector('#grenadeBox').textContent = joke
+  console.log(joke);
+  console.log(randTitle);
+})
 
+document.querySelector('#ballsBasket').addEventListener('click', function(e){
+  getJoke()
+  document.querySelector('#exampleModalCenterTitle').textContent = randTitle
+  document.querySelector('#grenadeBox').textContent = joke
+  console.log(joke);
+  console.log(randTitle);
+})
 
-
+// non functioning code simply keeping for reference
+// $(document).ready(function() {
+//   $('.btn').on('click', function() {
+//     var $this = $(this);
+//     var loadingText = '<i class="spinner-border spinner-border-sm"></i> gutpunching...';
+//     if ($(this).html() !== loadingText) {
+//       $this.data('original-text', $(this).html());
+//       $this.html(loadingText);
+//     }
+//     setTimeout(function() {
+//       $this.html($this.data('original-text'));
+//     }, 2000);
+//   });
+// })
 
 // const getResponse = async function () {
 //
@@ -67,39 +96,5 @@ let joke = data.value.joke
 // }
 // getResponse()
 // console.log(main);
-
-
-
-
 // let data = JSON.parse(main)
-//
 // let joke = data.value
-document.querySelector('#exampleModalCenterTitle').textContent = randTitle
-
-document.querySelector('#grenadeBox').textContent = joke
-console.log(joke);
-console.log(randTitle);
-}
-
-document.querySelector('#rocketButton').addEventListener('click', function(e){
-  getJoke()
-})
-
-document.querySelector('#ballsBasket').addEventListener('click', function(e){
-  getJoke()
-})
-
-
-// $(document).ready(function() {
-//   $('.btn').on('click', function() {
-//     var $this = $(this);
-//     var loadingText = '<i class="spinner-border spinner-border-sm"></i> gutpunching...';
-//     if ($(this).html() !== loadingText) {
-//       $this.data('original-text', $(this).html());
-//       $this.html(loadingText);
-//     }
-//     setTimeout(function() {
-//       $this.html($this.data('original-text'));
-//     }, 2000);
-//   });
-// })
