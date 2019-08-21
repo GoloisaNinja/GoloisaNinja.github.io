@@ -40,19 +40,40 @@ const myArray = [
 
 let joke = ''
 let randTitle = ''
-const getJoke = function(){
+let main = ''
+const getJoke = async function(){
 randTitle = myArray[Math.floor(Math.random() * myArray.length)]
 
-let request = new XMLHttpRequest()
-let url = "https://api.chucknorris.io/jokes/random"
+const response = await fetch('https://api.icndb.com/jokes/random')
+let data = await response.json()
+console.log(data);
+let joke = data.value.joke
 
-request.open("GET", url, true)
-request.send()
 
-let response = request.response
-let data = JSON.parse(response)
 
-let joke = data.value
+
+// const getResponse = async function () {
+//
+// let request = new XMLHttpRequest()
+// let url = "https://api.chucknorris.io/jokes/random"
+//
+// request.open("GET", url, true)
+// request.send()
+//
+// const response = await request
+//
+// let main = request.response
+// return main
+// }
+// getResponse()
+// console.log(main);
+
+
+
+
+// let data = JSON.parse(main)
+//
+// let joke = data.value
 document.querySelector('#exampleModalCenterTitle').textContent = randTitle
 
 document.querySelector('#grenadeBox').textContent = joke
