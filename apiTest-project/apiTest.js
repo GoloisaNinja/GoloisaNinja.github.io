@@ -1,3 +1,17 @@
+const getJoke = async function(){
+  randTitle = myArray[Math.floor(Math.random() * myArray.length)]
+  const response = await fetch('https://api.icndb.com/jokes/random')
+  data = await response.json()
+  joke = data.value.joke
+  return joke;
+  return randTitle;
+}
+
+getJoke()
+
+document.querySelector('#exampleModalCenterTitle').textContent = randTitle
+document.querySelector('#grenadeBox').textContent = joke
+
 $(document).ready(function() {
   $('.btn').on('click', function() {
     var $this = $(this);
@@ -14,17 +28,6 @@ $(document).ready(function() {
     }, 1000);
   });
 })
-
-// $(document).ready(function() {
-//     $("#btnFetch").click(function() {
-//       // disable button
-//       $(this).prop("disabled", true);
-//       // add spinner to button
-//       $(this).html(
-//         `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Loading...`
-//       );
-//     });
-// });
 
 const myArray = [
   'Rocket Launcher Jock Strap',
@@ -50,16 +53,6 @@ const fillModal = async function() {
    console.log(randTitle);
  }
 
-const getJoke = async function(){
-  randTitle = myArray[Math.floor(Math.random() * myArray.length)]
-  const response = await fetch('https://api.icndb.com/jokes/random')
-  data = await response.json()
-  joke = data.value.joke
-  return joke;
-  return randTitle;
-}
-
-getJoke()
 
 document.querySelector('#rocketButton').addEventListener('click', function(e){
   document.querySelector('#exampleModalCenterTitle').textContent = randTitle
@@ -70,36 +63,3 @@ document.querySelector('#rocketButton').addEventListener('click', function(e){
 document.querySelector('#ballsBasket').addEventListener('click', function(e){
   fillModal()
 })
-
-// non functioning code simply keeping for reference
-// $(document).ready(function() {
-//   $('.btn').on('click', function() {
-//     var $this = $(this);
-//     var loadingText = '<i class="spinner-border spinner-border-sm"></i> gutpunching...';
-//     if ($(this).html() !== loadingText) {
-//       $this.data('original-text', $(this).html());
-//       $this.html(loadingText);
-//     }
-//     setTimeout(function() {
-//       $this.html($this.data('original-text'));
-//     }, 2000);
-//   });
-// })
-
-// const getResponse = async function () {
-//
-// let request = new XMLHttpRequest()
-// let url = "https://api.chucknorris.io/jokes/random"
-//
-// request.open("GET", url, true)
-// request.send()
-//
-// const response = await request
-//
-// let main = request.response
-// return main
-// }
-// getResponse()
-// console.log(main);
-// let data = JSON.parse(main)
-// let joke = data.value
