@@ -3,6 +3,7 @@ const getJoke = async function(){
   const response = await fetch('https://api.icndb.com/jokes/random')
   data = await response.json()
   joke = data.value.joke
+  joke = joke.replace(/&quot;/g,'\"')
   return joke;
   return randTitle;
 }
