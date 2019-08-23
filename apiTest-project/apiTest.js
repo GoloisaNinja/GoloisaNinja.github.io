@@ -59,13 +59,15 @@ const getJoke = async function(){
   return randTitle;
 }
 
+getJoke()
+
 document.querySelector('#rocketButton').addEventListener('click', function(e){
   fillModal()
-},2000)
+})
 
 document.querySelector('#ballsBasket').addEventListener('click', function(e){
   fillModal()
-},2000)
+})
 
 // non functioning code simply keeping for reference
 // $(document).ready(function() {
