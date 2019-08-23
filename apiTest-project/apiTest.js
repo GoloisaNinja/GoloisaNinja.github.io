@@ -54,7 +54,7 @@ const getJoke = async function(){
   randTitle = myArray[Math.floor(Math.random() * myArray.length)]
   const response = await fetch('https://api.icndb.com/jokes/random')
   data = await response.json()
-  joke = await data.value.joke
+  joke = data.value.joke
   return joke;
   return randTitle;
 }
@@ -62,6 +62,8 @@ const getJoke = async function(){
 getJoke()
 
 document.querySelector('#rocketButton').addEventListener('click', function(e){
+  document.querySelector('#exampleModalCenterTitle').textContent = randTitle
+  document.querySelector('#grenadeBox').textContent = joke
   fillModal()
 })
 
