@@ -40,30 +40,31 @@ const myArray = [
 
 let joke = ''
 let randTitle = ''
-let main = ''
+let data = ''
+
+const fillModal = async function() {
+   await getJoke()
+   document.querySelector('#exampleModalCenterTitle').textContent = randTitle
+   document.querySelector('#grenadeBox').textContent = joke
+   console.log(joke);
+   console.log(randTitle);
+ }
 
 const getJoke = async function(){
   randTitle = myArray[Math.floor(Math.random() * myArray.length)]
   const response = await fetch('https://api.icndb.com/jokes/random')
-  let data = await response.json()
-  console.log(data);
-  let joke = data.value.joke
+  data = await response.json()
+  joke = await data.value.joke
+  return joke;
+  return randTitle;
 }
 
 document.querySelector('#rocketButton').addEventListener('click', function(e){
-  getJoke()
-  document.querySelector('#exampleModalCenterTitle').textContent = randTitle
-  document.querySelector('#grenadeBox').textContent = joke
-  console.log(joke);
-  console.log(randTitle);
+  fillModal()
 })
 
 document.querySelector('#ballsBasket').addEventListener('click', function(e){
-  getJoke()
-  document.querySelector('#exampleModalCenterTitle').textContent = randTitle
-  document.querySelector('#grenadeBox').textContent = joke
-  console.log(joke);
-  console.log(randTitle);
+  fillModal()
 })
 
 // non functioning code simply keeping for reference
