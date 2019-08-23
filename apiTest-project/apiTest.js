@@ -1,3 +1,19 @@
+const myArray = [
+  'Rocket Launcher Jock Strap',
+  'Bicep Lightning Bullets',
+  'Shotgun Bowling Heavy Bag',
+  'Delta Force Roundhouse Suplex',
+  'Windshield Throat Kick',
+  'Ninja Car Bomb Karate Chop',
+  'T-Rex Melting Throat Punch',
+  'Shark With Chest Hair',
+  'Chainsaw Porterhouse'
+]
+
+let joke = ''
+let randTitle = ''
+let data = ''
+
 const getJoke = async function(){
   randTitle = myArray[Math.floor(Math.random() * myArray.length)]
   const response = await fetch('https://api.icndb.com/jokes/random')
@@ -29,22 +45,6 @@ $(document).ready(function() {
     }, 1000);
   });
 })
-
-const myArray = [
-  'Rocket Launcher Jock Strap',
-  'Bicep Lightning Bullets',
-  'Shotgun Bowling Heavy Bag',
-  'Delta Force Roundhouse Suplex',
-  'Windshield Throat Kick',
-  'Ninja Car Bomb Karate Chop',
-  'T-Rex Melting Throat Punch',
-  'Shark With Chest Hair',
-  'Chainsaw Porterhouse'
-]
-
-let joke = ''
-let randTitle = ''
-let data = ''
 
 const fillModal = async function() {
    await getJoke()
