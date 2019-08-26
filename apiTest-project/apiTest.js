@@ -13,6 +13,12 @@ const myArray = [
 let joke = ''
 let randTitle = ''
 let data = ''
+let beardCheck = document.querySelector('#rocketButton')
+let beardCount = 0
+
+beardCheck.onclick = function() {
+  beardCount ++
+}
 
 const getJoke = async function(){
   randTitle = myArray[Math.floor(Math.random() * myArray.length)]
@@ -21,13 +27,13 @@ const getJoke = async function(){
   joke = data.value.joke
   joke = joke.replace(/&quot;/g,'\"')
   return joke;
-  return randTitle;
+  
 }
 
 getJoke()
 
-document.querySelector('#exampleModalCenterTitle').textContent = randTitle
-document.querySelector('#grenadeBox').textContent = joke
+// document.querySelector('#exampleModalCenterTitle').textContent = randTitle
+// document.querySelector('#grenadeBox').textContent = joke
 
 $(document).ready(function() {
   $('.btn').on('click', function() {
@@ -56,9 +62,12 @@ const fillModal = async function() {
 
 
 document.querySelector('#rocketButton').addEventListener('click', function(e){
-  document.querySelector('#exampleModalCenterTitle').textContent = randTitle
-  document.querySelector('#grenadeBox').textContent = joke
-  fillModal()
+  if (beardCount == 1) {
+    document.querySelector('#exampleModalCenterTitle').textContent = randTitle
+    document.querySelector('#grenadeBox').textContent = joke
+  } else {
+    fillModal()
+  }
 })
 
 document.querySelector('#ballsBasket').addEventListener('click', function(e){
